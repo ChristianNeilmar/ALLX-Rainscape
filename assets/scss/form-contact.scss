@@ -1,0 +1,38 @@
+.contact-form {
+    .quform {
+        .quform-label-text {
+            display: none;
+        }
+
+        .quform-field {
+            border-radius: 6px;
+
+            &::-moz-placeholder {
+                color: #b4b4b4;
+            }
+
+            &::placeholder {
+                color: #b4b4b4;
+            }
+        }
+
+        .quform-element-submi,
+        .quform-button-submit {
+            margin: 0;
+        }
+
+        .quform-submit {
+            border-radius: 5px;
+            border: unset;
+            color: #fff;
+            font-size: 14px;
+            line-height: 32px;
+            letter-spacing: 1.4px;
+
+            &:hover {
+                background: #fff;
+                color: #1877f2;
+            }
+        }
+    }
+}

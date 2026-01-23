@@ -1,0 +1,33 @@
+.mailing-list {
+    .quform {
+        .quform-label-text {
+            display: none;
+        }
+        .quform-input {
+            margin-bottom: 0;
+            ::placeholder {
+                color: #2f2f2f;
+            }
+        }
+        .quform-spacer {
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        .quform-field {
+            border-radius: 8px;
+            border: none;
+            padding: 15px 23px;
+        }
+        .quform-submit {
+            border-radius: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            border: none !important;
+            font-weight: 600;
+            line-height: 32px;
+        }
+        .quform-element-submit {
+            margin-top: 5px;
+        }
+    }
+}
