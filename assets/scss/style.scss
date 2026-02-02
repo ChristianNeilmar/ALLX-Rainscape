@@ -2,4 +2,19 @@
 .e-parent {
     scroll-margin-top: 90px;
 }
+
 // Fixes for sticky header and scroll margin
+
+.rain_recording_carousel {
+    .swiper-pagination {
+
+        .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+            background: white;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet:hover {
+            background: var(--e-global-color-accent);
+        }
+    }
+}

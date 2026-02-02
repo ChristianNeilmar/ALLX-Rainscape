@@ -1,0 +1,144 @@
+@keyframes overlayReveal {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseEffect {
+    0% {
+        background: rgba(5, 8, 27, 0.9);
+    }
+
+    50% {
+        background: rgba(5, 8, 27, 0.9);
+    }
+
+    100% {
+        background: rgba(5, 8, 27, 0.9);
+    }
+}
+
+.loop_item_audio_container {
+    position: relative;
+    overflow: hidden;
+}
+
+.loop_item_audio_container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    pointer-events: none;
+    opacity: 0;
+    transition:
+        opacity 0.4s ease,
+        backdrop-filter 0.4s ease,
+        background 0.4s ease;
+}
+
+.loop_item_audio_container.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 8, 27, 0.9) !important;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation:
+        overlayReveal 0.4s ease-out forwards,
+        pulseEffect 3s infinite ease-in-out;
+}
+
+.loop_item_audio_container .audio_player {
+    display: none;
+}
+
+.loop_item_audio_container.active .browsing_label,
+.loop_item_audio_container.active .browsing_button {
+    display: none;
+}
+
+.loop_item_audio_container.active .audio_player {
+    display: flex;
+    animation:
+        overlayReveal 0.4s ease-out forwards,
+}
+
+/* Container */
+.custom-audio-player {
+    background: transparent;
+    width: 100%;
+}
+
+/* The Slider Track */
+.seek-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(55, 57, 73, 1) !important;
+    background-image: linear-gradient(#C74FCA, #C74FCA);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    border-radius: 64px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* The Glowing Purple Thumb */
+.seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 8px;
+    width: 8px;
+    border-radius: 64px;
+    background: #C74FCA;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* Firefox Support */
+.seek-slider::-moz-range-progress {
+    background-color: #C74FCA;
+}
+
+.seek-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.seek-slider:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Time Row Styling */
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 16px;
+    color: rgba(180, 181, 187, 1);
+}
+
+.rain_audio_playing .elementor-swiper-button,
+.rain_audio_playing .swiper-pagination {
+    display: none !important;
+}
+
+.rain_audio_paused .swiper-pagination {
+    --dots-vertical-offset: -20px !important;
+}

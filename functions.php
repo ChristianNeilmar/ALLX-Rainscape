@@ -28,5 +28,11 @@ function enqueue_child_assets_style()
 {
     wp_enqueue_style('child-custom-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/style.css'));
     wp_enqueue_script('child-custom-js', get_stylesheet_directory_uri() . '/assets/js/app.js', array('jquery'), filemtime(get_stylesheet_directory() . '/assets/js/app.js'), true);
+
+    // Enqueue rain audio loop
+    wp_enqueue_script('rain-audio-loop-script', get_stylesheet_directory_uri() . '/rain_audio_loop/rain_audio_loop.js', array(), filemtime(get_stylesheet_directory() . '/rain_audio_loop/rain_audio_loop.js'), true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_assets_style', 20);
+
+// Include shortcodes
+require_once(get_stylesheet_directory() . '/rain_audio_loop/rain_audio_loop.php');
